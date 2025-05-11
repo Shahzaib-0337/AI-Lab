@@ -537,6 +537,11 @@ class Game:
             moved = self.board.ai_move(self.board)
             if moved:
                 self.change_turn()
+            else:
+                self.game_over = True
+                self.show_game_over(WHITE)
+                pygame.quit()
+                sys.exit()
 
 def main():
     run = True
